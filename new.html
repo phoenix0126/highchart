@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&family=Libre+Baskerville:wght@400;700&family=Lora:wght@500&display=swap" rel="stylesheet"> 
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <script src="https://kit.fontawesome.com/1c83e69aa6.js" crossorigin="anonymous"></script>
+        <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&family=Libre+Baskerville:wght@400;700&family=Lora:wght@500&family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet"> 
+        
+        <script src="./js/highcharts.js"></script>
+        <script src="./js/exporting.js"></script>
+        <script src="./js/export-data.js"></script>
+        <script src="./js/accessibility.js"></script>
+        <script src="./js/rounded-corners.js"></script>
+
+        
+
+        <style>
+            .container {
+                padding: 0;
+                margin: 0 auto;
+                padding: 0px;
+                gap: 32px;
+                width: 85%;
+            }
+
+            .firstline {
+                display: flex;
+                width: 100%;
+            }
+
+            .one {
+                width: 30%;
+                height: auto;
+                padding-right: 16px;
+            }
+            .two {
+                width: 70%;
+                height: auto;
+            }
+
+            .linetwo {
+                display: flex;
+                flex-wrap: wrap;
+                margin-top: 40px;
+            }
+
+            .four {
+                width: 25%;
+            }
+            .five {
+                width: 50%;
+            }
+            .six {
+                width: 50%;
+            }
+
+            .financialdetails {
+                display: flex;
+                margin-bottom: 16px;
+            }
+            .detailssquare {
+                background-color: #e7424b;
+                width: 16px;
+                height: 32px;
+                margin-right: 12px;
+            }
+            .details {
+                width: 204px;
+                height: 32px;
+                font-family: "Libre Baskerville";
+                font-style: normal;
+                font-weight: 400;
+                font-size: 24px;
+                line-height: 32px;
+                color: #444444;
+                flex: none;
+                order: 1;
+                flex-grow: 0;
+            }
+            .download {
+                width: 243px;
+                height: 24px;
+                font-family: "Poppins";
+                font-style: normal;
+                font-weight: 500;
+                font-size: 16px;
+                line-height: 24px;
+                color: #e7424b;
+                letter-spacing: 0.01em;
+                white-space: nowrap;
+            }
+
+            canvas {
+                position: relative;
+                max-height: 250px;
+                width: 100%;
+            }
+
+            .breakdown {
+                display: flex;
+                justify-content: space-around;
+                margin-bottom: 10px;
+            }
+            .desc {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                margin-bottom: 6px;
+                font-family: "Poppins", sans-serif;
+                font-size: 12px;
+                color: #666666;
+            }
+            .child-desc {
+                display: flex;
+                justify-content: space-between;
+                margin-bottom: 6px;
+                font-family: "Poppins", sans-serif;
+                font-size: 12px;
+                color: #666666;
+                margin-left: 24px;
+            }
+            h6 {
+                width: 100%;
+                height: 28px;
+                margin: 0;
+                font-family: "Poppins";
+                font-style: normal;
+                font-weight: 500;
+                font-size: 18px;
+                line-height: 28px;
+                color: #999999;
+                flex: none;
+                order: 1;
+                flex-grow: 1;
+            }
+            .s1 {
+                width: 16px;
+                height: 16px;
+                background: #ffd542;
+                border-radius: 4px;
+            }
+            .s2 {
+                width: 16px;
+                height: 16px;
+                background: linear-gradient(0, #fbaf17 50%, #fbe0be 50%);
+                border-radius: 4px;
+            }
+            .s3 {
+                width: 16px;
+                height: 16px;
+                background: #fbe0be;
+                border-radius: 4px;
+                flex: none;
+                order: 0;
+                flex-grow: 0;
+            }
+            .s4 {
+                width: 16px;
+                height: 16px;
+                background: #fbaf17;
+                border-radius: 4px;
+                flex: none;
+                order: 0;
+                flex-grow: 0;
+            }
+            .a1,
+            .a2 {
+                color: #e7424b;
+            }
+
+            .bd {
+                width: 224px;
+                height: 28px;
+                font-family: "Poppins";
+                font-style: normal;
+                font-weight: 500;
+                font-size: 18px;
+                line-height: 28px;
+                color: #999999;
+                flex: none;
+                order: 0;
+                flex-grow: 1;
+            }
+
+            .fourtitle {
+                height: 28px;
+                font-family: "Poppins";
+                font-style: normal;
+                font-weight: 500;
+                font-size: 18px;
+                line-height: 28px;
+                letter-spacing: 0.01em;
+                color: #999999;
+                flex: content;
+                order: 1;
+                flex-grow: 1;
+                overflow-wrap: break-word;
+            }
+
+            .fourdesc {
+                height: 24px;
+                font-family: "Poppins";
+                font-style: normal;
+                font-weight: 500;
+                font-size: 16px;
+                line-height: 24px;
+                letter-spacing: 0.01em;
+                color: #e7424b;
+                flex: none;
+                order: 1;
+                align-self: stretch;
+                flex-grow: 0;
+                overflow-wrap: break-word;
+            }
+            .goes {
+                color: #666666;
+                font-family: "Poppins", sans-serif;
+                font-weight: 400;
+                font-size: 18px;
+                line-height: 28px;
+            }
+            .pepple {
+                white-space: nowrap;
+                height: 24px;
+                font-family: "Poppins";
+                font-style: normal;
+                font-weight: 500;
+                font-size: 16px;
+                line-height: 24px;
+                text-align: right;
+                letter-spacing: 0.01em;
+                color: #444444;
+                flex: none;
+                order: 1;
+                flex-grow: 0;
+            }
+            .totalre {
+                margin-left: 5px;
+                font-family: "Poppins";
+                font-style: normal;
+                font-weight: 400;
+                font-size: 16px;
+                line-height: 24px;
+                letter-spacing: 0.01em;
+                color: #666666;
+                flex: none;
+                order: 1;
+                flex-grow: 1;
+            }
+
+            .audited {
+                height: 28px;
+                font-family: "Poppins";
+                font-style: normal;
+                font-weight: 500;
+                font-size: 18px;
+                line-height: 28px;
+                letter-spacing: 0.01em;
+                color: #999999;
+                flex: none;
+                order: 1;
+                flex-grow: 1;
+            }
+
+            .financials {
+                display: flex;
+                justify-content: space-between;
+                margin-top: 24px;
+                border-bottom: solid 1px #e8e8e8;
+            }
+
+            .fa-chevron-left {
+                padding-right: 22px;
+                color: #e7424b;
+            }
+            .fa-chevron-right {
+                padding-left: 22px;
+                color: #e7424b;
+            }
+
+            h6 .fa-solid.fa-indian-rupee-sign {
+                padding-right: 14px;
+            }
+
+            @media (max-width: 768px) {
+            .financials {
+                display: block;
+            }
+            .three {
+                width: 372px;
+            }
+            .linetwo {
+                display: block;
+            }
+            .linetwo .fourtitle {
+                margin-top: 0;
+                margin-bottom: 12px;
+            }
+            .five,
+            .six {
+                width: 100%;
+                margin-bottom: 32px;
+            }
+            }
+
+            
+
+            @media (max-width: 450px) {
+            .financials {
+                display: block;
+            }
+            .three {
+                width: 100%;
+            }
+            .highcharts-root {
+                width: 358px;
+            }
+            }
+
+            @media (max-width: 415px) {
+                .highcharts-root {
+                    width: 300px;
+                }
+            }
+
+            @media (max-width: 992px) {
+            .container {
+                width: calc(100% - 70px);
+            }
+            .bd {
+                width: 176px;
+            }
+            }
+
+            @media (max-width: 1200px) {
+            .firstline {
+                flex-direction: column;
+            }
+            .one {
+                width: 100%;
+            }
+            .one .financialdetails,
+            .one {
+                margin-bottom: 32px;
+            }
+            .two {
+                width: 100%;
+            }
+
+            .bd {
+                font-size: 16px;
+                line-height: 24px;
+            }
+
+            .desc .totalre,
+            .desc .pepple {
+                font-size: 14px;
+                line-height: 20px;
+            }
+            .child-desc .totalre,
+            .child-desc .pepple {
+                font-size: 14px;
+                line-height: 20px;
+            }
+            }
+            .pepple span {
+                margin-right: 5px;
+            }
+
+            .highcharts-figure,
+            .highcharts-data-table table {
+                margin: 0;
+            }
+
+            .highcharts-data-table table {
+                font-family: Verdana, sans-serif;
+                border-collapse: collapse;
+                border: 1px solid #ebebeb;
+                margin: 10px auto;
+                text-align: center;
+                width: 100%;
+                max-width: 500px;
+            }
+
+            .highcharts-data-table caption {
+                padding: 1em 0;
+                font-size: 1.2em;
+                color: #555;
+            }
+
+            .highcharts-data-table th {
+                font-weight: 600;
+                padding: 0.5em;
+            }
+
+            .highcharts-data-table td,
+            .highcharts-data-table th,
+            .highcharts-data-table caption {
+                padding: 0.5em;
+            }
+
+            .highcharts-data-table thead tr,
+            .highcharts-data-table tr:nth-child(even) {
+                background: #f8f8f8;
+            }
+
+            .highcharts-data-table tr:hover {
+                background: #f1f7ff;
+            }
+        </style>
+
+    </head>
+    <body>
+        <div class="container">
+            <div class="firstline">
+                <div class="one">
+                    <div class="financialdetails">
+                        <div class="detailssquare"></div>
+                        <div class="details">Financial Details</div>
+                    </div>
+                    <a class="download">Download Annual Report 2021 <i class="fa-solid fa-cloud-arrow-down"></i></a>
+                </div>
+            
+                <div class="two">
+                    <h6><i class="fa-solid fa-indian-rupee-sign"></i> Financials</h6>
+                    <div class="financials">
+                        <div class="graphBox">
+
+                            <figure class="highcharts-figure">
+                                <div id="myChart"></div>
+                            </figure>
+                        </div>
+    
+                        <div class="three">
+                            <div class="breakdown">
+                                <div class="bd">Break down</div>
+                                <div class="pepple"><i class="fa-solid fa-chevron-left"class="a1" ></i>  2021  <i class="fa-solid fa-chevron-right"class='a2'></i></div>
+                            </div>
+                            
+                            <div class="desc">
+                                <div class="desc" ><div class="s1"></div><div class="totalre">Total Revenue</div> </div>
+                                <div class="pepple"><span>Rs.</span>1,650,000</div>
+                            </div>
+                            <div class="desc">
+                                <div class="desc" ><div class="s2"></div><div class="totalre">Total Expenses</div> </div>
+                                <div class="pepple"><span>Rs.</span>500,000</div>
+                            </div>
+                            <div class="child-desc">
+                                <div class="desc" ><div class="s3"></div><div class="totalre">Admin Expenses</div> </div>
+                                <div class="pepple"><span>Rs.</span>150,000</div>
+                            </div>
+                            <div class="child-desc">
+                                <div class="desc" ><div class="s4"></div><div class="totalre">Program Expenses</div> </div>
+                                <div class="pepple"><span>Rs.</span>350,000</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="linetwo">
+                        <div class="five">
+                            <p class="fourtitle"><i class="fa-regular fa-file"></i>  Income Tax Returns</p>
+                            <p class="fourdesc">FY 21-22, FY 20-21, FY 19-20, FY 18-19</p>
+                        </div>
+                        <div class="five">
+                            <p class="fourtitle"><i class="fa-regular fa-file"></i>  Audited Balance sheet</p>
+                            <p class="fourdesc">FY 21-22, FY 20-21, FY 19-20, FY 18-19</p>
+                        </div>
+                        <div class="five">
+                            <p class="fourtitle"><i class="fa-regular fa-file"></i>  FCRA Returns</p>
+                            <p class="fourdesc">FY 21-22, FY 20-21, FY 19-20, FY 18-19</p>
+                        </div>
+                        <div class="six">
+                            <p class="audited"><i class="fa-regular fa-user"></i> Auditor</h2>
+                            <p class="goes">Auditor Name</p>
+                        </div>
+                        <div class="six">
+                            <p class="audited"><i class="fa-solid fa-indian-rupee-sign"></i> Number of Donors</h2>
+                            <p class="goes">Text goes here</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <script>
+            const formatter = new Intl.NumberFormat('en-US', {
+            });
+
+            Highcharts.setOptions({
+                lang: {
+                    numericSymbols: [' K', ' M']
+                },
+            });
+
+            Highcharts.chart('myChart', {
+                chart: {
+                    type: 'column',
+                    width: '384',
+                    height: '304'
+                },
+
+                title: {
+                    text: ''
+                },
+
+                xAxis: {
+                    categories: ['2021', '2020', '2019'],
+                    labels:{
+                        formatter:function() {
+                            return '<div style="font-size:14px;font-weight:500; color:#999">' + this.value + '</div>'
+                        }
+                    }
+                },
+
+                yAxis: {
+                    allowDecimals: false,
+                    title: {
+                        text: ''
+                    },
+                    labels:{
+                        formatter:function() {
+                            if(this.value != 0){
+                                if(this.value < 1000000) {
+                                    return '<div style="font-size:14px;font-weight:500; color:#999">' + this.value/1000 + 'K' + '</div>'
+                                } else {
+                                    return '<div style="font-size:14px;font-weight:500; color:#999">' + this.value / 1000000 + 'M' + '</div>'
+                                }
+                            } else {
+                                return '<div style="font-size:14px;font-weight:500; color:#999">' + 0 + '</div>'
+                            }
+                        }
+                    }
+                },
+                tooltip: {
+                    valueSuffix: ' millions',
+                    useHTML: true,
+                    backgroundColor: "#444444",
+                    borderWidth: 1,
+                    borderRadius: 10,
+                    borderColor: "#444444",
+                    formatter: function(){
+                        return '<div style="background-color: #444' +'!important; font-weight:bold;color:#fff" class="tooltip"> ' + 'Rs. ' + formatter.format(this.point.stackTotal) + '</div>';
+                    }
+                },
+                plotOptions: {
+                    column: {
+                        stacking: 'normal'
+                    },
+                    series: {
+                        pointStart: 0,
+                        states: {
+                        inactive: {
+                            opacity: 1
+                        }
+                        },
+                    }
+                },
+                series: [
+                    {
+                        name: '2021',
+                        data: [1600000, 1400000, 1300000],
+                        stack: 'Europe',
+                        color: '#FFD542',
+                        hoverColor: '#ffffff',
+                        borderWidth: 1,
+                        width: 24,
+                        borderRadius: '4px',
+                        barThickness: 24,
+                        states: {
+                            hover: {
+                                color: '#FFD542',
+                            }
+                        },
+                    },
+                    {
+                        name: '2020',
+                        data: [150000, 150000, 150000],
+                        stack: 'North America',
+                        color: '#FBE0BE',
+                        borderWidth: 1,
+                        width: 24,
+                        borderRadiusTopLeft: '4px',
+                        borderRadiusTopRight: '4px',
+                        barThickness: 24,
+                        states: {
+                            hover: {
+                                color: '#FBE0BE',
+                            }
+                        },
+                    },
+                    {
+                        name: '2019',
+                        data: [350000, 105000, 200000],
+                        stack: 'North America',
+                        color: '#FBAF17',
+                        borderWidth: 1,
+                        width: 24,
+                        borderRadiusBottomLeft: '4px',
+                        borderRadiusBottomRight: '4px',
+                        barThickness: 24,
+                        states: {
+                            hover: {
+                                color: '#FBAF17',
+                            }
+                        },
+                    },
+                    
+                ],
+                
+            });
+            document.querySelectorAll(".highcharts-a11y-proxy-button")[0].style.display = 'none';
+            document.querySelectorAll(".highcharts-contextbutton")[0].style.display = 'none';
+            document.querySelectorAll(".highcharts-legend")[0].style.display = 'none';
+            document.querySelectorAll(".highcharts-credits")[0].style.display = 'none';
+            for(let i=0; i<document.querySelectorAll(".highcharts-point").length; i++) {
+                document.querySelectorAll(".highcharts-point")[i].style.stroke = 'none';
+            }
+            document.querySelectorAll(".highcharts-point")[4].style.rx = '4';
+          </script>
+    </body>
+</html>
