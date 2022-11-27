@@ -15,402 +15,7 @@
         <script src="./js/accessibility.js"></script>
         <script src="./js/rounded-corners.js"></script>
 
-        
-
-        <style>
-            .container {
-                padding: 0;
-                margin: 0 auto;
-                padding: 0px;
-                gap: 32px;
-                width: 85%;
-            }
-
-            .firstline {
-                display: flex;
-                width: 100%;
-            }
-
-            .one {
-                width: 30%;
-                height: auto;
-                padding-right: 16px;
-            }
-            .two {
-                width: 70%;
-                height: auto;
-            }
-
-            .linetwo {
-                display: flex;
-                flex-wrap: wrap;
-                margin-top: 40px;
-            }
-
-            .four {
-                width: 25%;
-            }
-            .five {
-                width: 50%;
-            }
-            .six {
-                width: 50%;
-            }
-
-            .financialdetails {
-                display: flex;
-                margin-bottom: 16px;
-            }
-            .detailssquare {
-                background-color: #e7424b;
-                width: 16px;
-                height: 32px;
-                margin-right: 12px;
-            }
-            .details {
-                width: 204px;
-                height: 32px;
-                font-family: "Libre Baskerville";
-                font-style: normal;
-                font-weight: 400;
-                font-size: 24px;
-                line-height: 32px;
-                color: #444444;
-                flex: none;
-                order: 1;
-                flex-grow: 0;
-            }
-            .download {
-                width: 243px;
-                height: 24px;
-                font-family: "Poppins";
-                font-style: normal;
-                font-weight: 500;
-                font-size: 16px;
-                line-height: 24px;
-                color: #e7424b;
-                letter-spacing: 0.01em;
-                white-space: nowrap;
-            }
-
-            canvas {
-                position: relative;
-                max-height: 250px;
-                width: 100%;
-            }
-
-            .breakdown {
-                display: flex;
-                justify-content: space-around;
-                margin-bottom: 10px;
-            }
-            .desc {
-                display: flex;
-                align-items: center;
-                justify-content: space-between;
-                margin-bottom: 6px;
-                font-family: "Poppins", sans-serif;
-                font-size: 12px;
-                color: #666666;
-            }
-            .child-desc {
-                display: flex;
-                justify-content: space-between;
-                margin-bottom: 6px;
-                font-family: "Poppins", sans-serif;
-                font-size: 12px;
-                color: #666666;
-                margin-left: 24px;
-            }
-            h6 {
-                width: 100%;
-                height: 28px;
-                margin: 0;
-                font-family: "Poppins";
-                font-style: normal;
-                font-weight: 500;
-                font-size: 18px;
-                line-height: 28px;
-                color: #999999;
-                flex: none;
-                order: 1;
-                flex-grow: 1;
-            }
-            .s1 {
-                width: 16px;
-                height: 16px;
-                background: #ffd542;
-                border-radius: 4px;
-            }
-            .s2 {
-                width: 16px;
-                height: 16px;
-                background: linear-gradient(0, #fbaf17 50%, #fbe0be 50%);
-                border-radius: 4px;
-            }
-            .s3 {
-                width: 16px;
-                height: 16px;
-                background: #fbe0be;
-                border-radius: 4px;
-                flex: none;
-                order: 0;
-                flex-grow: 0;
-            }
-            .s4 {
-                width: 16px;
-                height: 16px;
-                background: #fbaf17;
-                border-radius: 4px;
-                flex: none;
-                order: 0;
-                flex-grow: 0;
-            }
-            .a1,
-            .a2 {
-                color: #e7424b;
-            }
-
-            .bd {
-                width: 224px;
-                height: 28px;
-                font-family: "Poppins";
-                font-style: normal;
-                font-weight: 500;
-                font-size: 18px;
-                line-height: 28px;
-                color: #999999;
-                flex: none;
-                order: 0;
-                flex-grow: 1;
-            }
-
-            .fourtitle {
-                height: 28px;
-                font-family: "Poppins";
-                font-style: normal;
-                font-weight: 500;
-                font-size: 18px;
-                line-height: 28px;
-                letter-spacing: 0.01em;
-                color: #999999;
-                flex: content;
-                order: 1;
-                flex-grow: 1;
-                overflow-wrap: break-word;
-            }
-
-            .fourdesc {
-                height: 24px;
-                font-family: "Poppins";
-                font-style: normal;
-                font-weight: 500;
-                font-size: 16px;
-                line-height: 24px;
-                letter-spacing: 0.01em;
-                color: #e7424b;
-                flex: none;
-                order: 1;
-                align-self: stretch;
-                flex-grow: 0;
-                overflow-wrap: break-word;
-            }
-            .goes {
-                color: #666666;
-                font-family: "Poppins", sans-serif;
-                font-weight: 400;
-                font-size: 18px;
-                line-height: 28px;
-            }
-            .pepple {
-                white-space: nowrap;
-                height: 24px;
-                font-family: "Poppins";
-                font-style: normal;
-                font-weight: 500;
-                font-size: 16px;
-                line-height: 24px;
-                text-align: right;
-                letter-spacing: 0.01em;
-                color: #444444;
-                flex: none;
-                order: 1;
-                flex-grow: 0;
-            }
-            .totalre {
-                margin-left: 5px;
-                font-family: "Poppins";
-                font-style: normal;
-                font-weight: 400;
-                font-size: 16px;
-                line-height: 24px;
-                letter-spacing: 0.01em;
-                color: #666666;
-                flex: none;
-                order: 1;
-                flex-grow: 1;
-            }
-
-            .audited {
-                height: 28px;
-                font-family: "Poppins";
-                font-style: normal;
-                font-weight: 500;
-                font-size: 18px;
-                line-height: 28px;
-                letter-spacing: 0.01em;
-                color: #999999;
-                flex: none;
-                order: 1;
-                flex-grow: 1;
-            }
-
-            .financials {
-                display: flex;
-                justify-content: space-between;
-                margin-top: 24px;
-                border-bottom: solid 1px #e8e8e8;
-            }
-
-            .fa-chevron-left {
-                padding-right: 22px;
-                color: #e7424b;
-            }
-            .fa-chevron-right {
-                padding-left: 22px;
-                color: #e7424b;
-            }
-
-            h6 .fa-solid.fa-indian-rupee-sign {
-                padding-right: 14px;
-            }
-
-            @media (max-width: 768px) {
-            .financials {
-                display: block;
-            }
-            .three {
-                width: 372px;
-            }
-            .linetwo {
-                display: block;
-            }
-            .linetwo .fourtitle {
-                margin-top: 0;
-                margin-bottom: 12px;
-            }
-            .five,
-            .six {
-                width: 100%;
-                margin-bottom: 32px;
-            }
-            }
-
-            
-
-            @media (max-width: 450px) {
-            .financials {
-                display: block;
-            }
-            .three {
-                width: 100%;
-            }
-            .highcharts-root {
-                width: 358px;
-            }
-            }
-
-            @media (max-width: 415px) {
-                .highcharts-root {
-                    width: 300px;
-                }
-            }
-
-            @media (max-width: 992px) {
-            .container {
-                width: calc(100% - 70px);
-            }
-            .bd {
-                width: 176px;
-            }
-            }
-
-            @media (max-width: 1200px) {
-            .firstline {
-                flex-direction: column;
-            }
-            .one {
-                width: 100%;
-            }
-            .one .financialdetails,
-            .one {
-                margin-bottom: 32px;
-            }
-            .two {
-                width: 100%;
-            }
-
-            .bd {
-                font-size: 16px;
-                line-height: 24px;
-            }
-
-            .desc .totalre,
-            .desc .pepple {
-                font-size: 14px;
-                line-height: 20px;
-            }
-            .child-desc .totalre,
-            .child-desc .pepple {
-                font-size: 14px;
-                line-height: 20px;
-            }
-            }
-            .pepple span {
-                margin-right: 5px;
-            }
-
-            .highcharts-figure,
-            .highcharts-data-table table {
-                margin: 0;
-            }
-
-            .highcharts-data-table table {
-                font-family: Verdana, sans-serif;
-                border-collapse: collapse;
-                border: 1px solid #ebebeb;
-                margin: 10px auto;
-                text-align: center;
-                width: 100%;
-                max-width: 500px;
-            }
-
-            .highcharts-data-table caption {
-                padding: 1em 0;
-                font-size: 1.2em;
-                color: #555;
-            }
-
-            .highcharts-data-table th {
-                font-weight: 600;
-                padding: 0.5em;
-            }
-
-            .highcharts-data-table td,
-            .highcharts-data-table th,
-            .highcharts-data-table caption {
-                padding: 0.5em;
-            }
-
-            .highcharts-data-table thead tr,
-            .highcharts-data-table tr:nth-child(even) {
-                background: #f8f8f8;
-            }
-
-            .highcharts-data-table tr:hover {
-                background: #f1f7ff;
-            }
-        </style>
+        <link rel="stylesheet" href="./style.css">
 
     </head>
     <body>
@@ -421,14 +26,21 @@
                         <div class="detailssquare"></div>
                         <div class="details">Financial Details</div>
                     </div>
-                    <a class="download">Download Annual Report 2021 <i class="fa-solid fa-cloud-arrow-down"></i></a>
+                    <a class="download">Download Annual Report 2021
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M8 17L12 21M12 21L16 17M12 21V12M20 16.7428C21.2215 15.734 22 14.2079 22 12.5C22 9.46243 19.5376 7 16.5 7C16.2815 7 16.0771 6.886 15.9661 6.69774C14.6621 4.48484 12.2544 3 9.5 3C5.35786 3 2 6.35786 2 10.5C2 12.5661 2.83545 14.4371 4.18695 15.7935" stroke="#E7424B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>                            
+                    </a>
                 </div>
             
                 <div class="two">
-                    <h6><i class="fa-solid fa-indian-rupee-sign"></i> Financials</h6>
+                    <h6>
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M6 3H18M6 8H18M14.5 21L6 13H9C15.667 13 15.667 3 9 3" stroke="#999999" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg> Financials
+                    </h6>
                     <div class="financials">
                         <div class="graphBox">
-
                             <figure class="highcharts-figure">
                                 <div id="myChart"></div>
                             </figure>
@@ -461,23 +73,38 @@
 
                     <div class="linetwo">
                         <div class="five">
-                            <p class="fourtitle"><i class="fa-regular fa-file"></i>  Income Tax Returns</p>
+                            <p class="fourtitle">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M14 2.26946V6.4C14 6.96005 14 7.24008 14.109 7.45399C14.2049 7.64215 14.3578 7.79513 14.546 7.89101C14.7599 8 15.0399 8 15.6 8H19.7305M20 9.98822V17.2C20 18.8802 20 19.7202 19.673 20.362C19.3854 20.9265 18.9265 21.3854 18.362 21.673C17.7202 22 16.8802 22 15.2 22H8.8C7.11984 22 6.27976 22 5.63803 21.673C5.07354 21.3854 4.6146 20.9265 4.32698 20.362C4 19.7202 4 18.8802 4 17.2V6.8C4 5.11984 4 4.27976 4.32698 3.63803C4.6146 3.07354 5.07354 2.6146 5.63803 2.32698C6.27976 2 7.11984 2 8.8 2H12.0118C12.7455 2 13.1124 2 13.4577 2.08289C13.7638 2.15638 14.0564 2.27759 14.3249 2.44208C14.6276 2.6276 14.887 2.88703 15.4059 3.40589L18.5941 6.59411C19.113 7.11297 19.3724 7.3724 19.5579 7.67515C19.7224 7.94356 19.8436 8.2362 19.9171 8.5423C20 8.88757 20 9.25445 20 9.98822Z" stroke="#999999" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg> Income Tax Returns</p>
                             <p class="fourdesc">FY 21-22, FY 20-21, FY 19-20, FY 18-19</p>
                         </div>
                         <div class="five">
-                            <p class="fourtitle"><i class="fa-regular fa-file"></i>  Audited Balance sheet</p>
+                            <p class="fourtitle">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M14 2.26946V6.4C14 6.96005 14 7.24008 14.109 7.45399C14.2049 7.64215 14.3578 7.79513 14.546 7.89101C14.7599 8 15.0399 8 15.6 8H19.7305M20 9.98822V17.2C20 18.8802 20 19.7202 19.673 20.362C19.3854 20.9265 18.9265 21.3854 18.362 21.673C17.7202 22 16.8802 22 15.2 22H8.8C7.11984 22 6.27976 22 5.63803 21.673C5.07354 21.3854 4.6146 20.9265 4.32698 20.362C4 19.7202 4 18.8802 4 17.2V6.8C4 5.11984 4 4.27976 4.32698 3.63803C4.6146 3.07354 5.07354 2.6146 5.63803 2.32698C6.27976 2 7.11984 2 8.8 2H12.0118C12.7455 2 13.1124 2 13.4577 2.08289C13.7638 2.15638 14.0564 2.27759 14.3249 2.44208C14.6276 2.6276 14.887 2.88703 15.4059 3.40589L18.5941 6.59411C19.113 7.11297 19.3724 7.3724 19.5579 7.67515C19.7224 7.94356 19.8436 8.2362 19.9171 8.5423C20 8.88757 20 9.25445 20 9.98822Z" stroke="#999999" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>  Audited Balance sheet</p>
                             <p class="fourdesc">FY 21-22, FY 20-21, FY 19-20, FY 18-19</p>
                         </div>
                         <div class="five">
-                            <p class="fourtitle"><i class="fa-regular fa-file"></i>  FCRA Returns</p>
+                            <p class="fourtitle">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M14 2.26946V6.4C14 6.96005 14 7.24008 14.109 7.45399C14.2049 7.64215 14.3578 7.79513 14.546 7.89101C14.7599 8 15.0399 8 15.6 8H19.7305M20 9.98822V17.2C20 18.8802 20 19.7202 19.673 20.362C19.3854 20.9265 18.9265 21.3854 18.362 21.673C17.7202 22 16.8802 22 15.2 22H8.8C7.11984 22 6.27976 22 5.63803 21.673C5.07354 21.3854 4.6146 20.9265 4.32698 20.362C4 19.7202 4 18.8802 4 17.2V6.8C4 5.11984 4 4.27976 4.32698 3.63803C4.6146 3.07354 5.07354 2.6146 5.63803 2.32698C6.27976 2 7.11984 2 8.8 2H12.0118C12.7455 2 13.1124 2 13.4577 2.08289C13.7638 2.15638 14.0564 2.27759 14.3249 2.44208C14.6276 2.6276 14.887 2.88703 15.4059 3.40589L18.5941 6.59411C19.113 7.11297 19.3724 7.3724 19.5579 7.67515C19.7224 7.94356 19.8436 8.2362 19.9171 8.5423C20 8.88757 20 9.25445 20 9.98822Z" stroke="#999999" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>  FCRA Returns</p>
                             <p class="fourdesc">FY 21-22, FY 20-21, FY 19-20, FY 18-19</p>
                         </div>
                         <div class="six">
-                            <p class="audited"><i class="fa-regular fa-user"></i> Auditor</h2>
+                            <p class="audited">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M20 21V19C20 17.9391 19.5786 16.9217 18.8284 16.1716C18.0783 15.4214 17.0609 15 16 15H8C6.93913 15 5.92172 15.4214 5.17157 16.1716C4.42143 16.9217 4 17.9391 4 19V21M16 7C16 9.20914 14.2091 11 12 11C9.79086 11 8 9.20914 8 7C8 4.79086 9.79086 3 12 3C14.2091 3 16 4.79086 16 7Z" stroke="#999999" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg> Auditor</p>
                             <p class="goes">Auditor Name</p>
                         </div>
                         <div class="six">
-                            <p class="audited"><i class="fa-solid fa-indian-rupee-sign"></i> Number of Donors</h2>
+                            <p class="audited">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M6 3H18M6 8H18M14.5 21L6 13H9C15.667 13 15.667 3 9 3" stroke="#999999" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg> Number of Donors</h2>
                             <p class="goes">Text goes here</p>
                         </div>
                     </div>
@@ -499,7 +126,7 @@
                 chart: {
                     type: 'column',
                     width: '384',
-                    height: '304'
+                    height: '304',
                 },
 
                 title: {
@@ -509,42 +136,60 @@
                 xAxis: {
                     categories: ['2021', '2020', '2019'],
                     labels:{
+                        style:{
+                            color: '#999999',
+                            cursor: 'default',
+                            fontSize: '14px',
+                        },
                         formatter:function() {
-                            return '<div style="font-size:14px;font-weight:500; color:#999">' + this.value + '</div>'
+                            return this.value;
                         }
                     }
                 },
 
                 yAxis: {
-                    allowDecimals: false,
                     title: {
                         text: ''
                     },
+                    opposite: false,
+                    offset: 40,
+                    
                     labels:{
+                        enabled: true,
+                        align: 'left',
+                        x: 0,
+                        
+
+                        style:{
+                            color: '#999999',
+                            cursor: 'default',
+                            fontSize: '14px',
+                        },
                         formatter:function() {
                             if(this.value != 0){
                                 if(this.value < 1000000) {
-                                    return '<div style="font-size:14px;font-weight:500; color:#999">' + this.value/1000 + 'K' + '</div>'
+                                    return this.value/1000 + 'K';
                                 } else {
-                                    return '<div style="font-size:14px;font-weight:500; color:#999">' + this.value / 1000000 + 'M' + '</div>'
+                                    return this.value / 1000000 + 'M';
                                 }
                             } else {
-                                return '<div style="font-size:14px;font-weight:500; color:#999">' + 0 + '</div>'
+                                return 0;
                             }
                         }
                     }
                 },
+                
                 tooltip: {
-                    valueSuffix: ' millions',
-                    useHTML: true,
-                    backgroundColor: "#444444",
+                    useHTML: false,
+                    backgroundColor: "#444",
                     borderWidth: 1,
-                    borderRadius: 10,
-                    borderColor: "#444444",
+                    borderRadius: 20,
+                    borderColor: "#444",
                     formatter: function(){
-                        return '<div style="background-color: #444' +'!important; font-weight:bold;color:#fff" class="tooltip"> ' + 'Rs. ' + formatter.format(this.point.stackTotal) + '</div>';
-                    }
+                        return 'Rs. ' +formatter.format(this.point.stackTotal);
+                    },
                 },
+                
                 plotOptions: {
                     column: {
                         stacking: 'normal'
@@ -558,15 +203,15 @@
                         },
                     }
                 },
+                
                 series: [
                     {
                         name: '2021',
                         data: [1600000, 1400000, 1300000],
                         stack: 'Europe',
                         color: '#FFD542',
-                        hoverColor: '#ffffff',
                         borderWidth: 1,
-                        width: 24,
+                        width: 50,
                         borderRadius: '4px',
                         barThickness: 24,
                         states: {
@@ -609,6 +254,8 @@
                     },
                     
                 ],
+                
+                
                 
             });
             document.querySelectorAll(".highcharts-a11y-proxy-button")[0].style.display = 'none';

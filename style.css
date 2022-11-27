@@ -16,24 +16,38 @@
   height: auto;
   padding-right: 16px;
 }
-.two {
-  width: 70%;
-  height: auto;
+.two h6 {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  padding: 0;
+  gap: 8px;
+  flex: none;
+  order: 0;
+  align-self: stretch;
+  flex-grow: 0;
+}
+
+.two h6 svg {
+  flex: none;
+  order: 0;
+  flex-grow: 0;
 }
 
 .linetwo {
   display: flex;
   flex-wrap: wrap;
-  margin-top: 40px;
 }
 
 .four {
   width: 25%;
 }
 .five {
+  padding-top: 40px;
   width: 50%;
 }
 .six {
+  padding-top: 40px;
   width: 50%;
 }
 
@@ -61,8 +75,11 @@
   flex-grow: 0;
 }
 .download {
-  width: 243px;
-  height: 24px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 0px;
+  gap: 4px;
   font-family: "Poppins";
   font-style: normal;
   font-weight: 500;
@@ -166,6 +183,16 @@ h6 {
 }
 
 .fourtitle {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 0px;
+  margin: 0;
+  gap: 12px;
+  flex: none;
+  order: 0;
+  align-self: stretch;
+  flex-grow: 0;
   height: 28px;
   font-family: "Poppins";
   font-style: normal;
@@ -181,6 +208,7 @@ h6 {
 }
 
 .fourdesc {
+  margin: 12px 0 0 0;
   height: 24px;
   font-family: "Poppins";
   font-style: normal;
@@ -196,6 +224,7 @@ h6 {
   overflow-wrap: break-word;
 }
 .goes {
+  margin: 12px 0 0 0;
   color: #666666;
   font-family: "Poppins", sans-serif;
   font-weight: 400;
@@ -232,6 +261,16 @@ h6 {
 }
 
 .audited {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 0;
+  margin: 0;
+  gap: 12px;
+  flex: none;
+  order: 0;
+  align-self: stretch;
+  flex-grow: 0;
   height: 28px;
   font-family: "Poppins";
   font-style: normal;
@@ -265,85 +304,6 @@ h6 .fa-solid.fa-indian-rupee-sign {
   padding-right: 14px;
 }
 
-@media (max-width: 768px) {
-  .financials {
-    display: block;
-  }
-  .three {
-    width: 372px;
-  }
-  .linetwo {
-    display: block;
-  }
-  .linetwo .fourtitle {
-    margin-top: 0;
-    margin-bottom: 12px;
-  }
-  .five,
-  .six {
-    width: 100%;
-    margin-bottom: 32px;
-  }
-}
-
-@media (max-width: 450px) {
-  .financials {
-    display: block;
-  }
-  .three {
-    width: 100%;
-  }
-  .highcharts-root {
-    width: 358px;
-  }
-}
-
-@media (max-width: 415px) {
-  .highcharts-root {
-    width: 300px;
-  }
-}
-
-@media (max-width: 992px) {
-  .container {
-    width: calc(100% - 70px);
-  }
-  .bd {
-    width: 176px;
-  }
-}
-
-@media (max-width: 1200px) {
-  .firstline {
-    flex-direction: column;
-  }
-  .one {
-    width: 100%;
-  }
-  .one .financialdetails,
-  .one {
-    margin-bottom: 32px;
-  }
-  .two {
-    width: 100%;
-  }
-
-  .bd {
-    font-size: 16px;
-    line-height: 24px;
-  }
-
-  .desc .totalre,
-  .desc .pepple {
-    font-size: 14px;
-    line-height: 20px;
-  }
-  .child-desc .totalre,
-  .child-desc .pepple {
-    font-size: 14px;
-    line-height: 20px;
-  }
-}
 .pepple span {
   margin-right: 5px;
 }
@@ -387,4 +347,105 @@ h6 .fa-solid.fa-indian-rupee-sign {
 
 .highcharts-data-table tr:hover {
   background: #f1f7ff;
+}
+
+.tooltip {
+  background: #444444;
+  border-radius: 8px;
+}
+.tooltip span {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 20px;
+  text-align: center;
+  letter-spacing: 0.01em;
+  color: #FFFFFF;
+}
+
+@media (max-width: 1200px) {
+  .firstline {
+      flex-direction: column;
+  }
+  .one {
+      width: 100%;
+  }
+  .one .financialdetails,
+  .one {
+      margin-bottom: 32px;
+  }
+  .two {
+      width: 100%;
+  }
+
+  .bd {
+      font-size: 16px;
+      line-height: 24px;
+  }
+
+  .desc .totalre,
+  .desc .pepple {
+      font-size: 14px;
+      line-height: 20px;
+  }
+  .child-desc .totalre,
+  .child-desc .pepple {
+      font-size: 14px;
+      line-height: 20px;
+  }
+}
+
+.highcharts-tooltip text{
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 20px;
+  text-align: center;
+  letter-spacing: 0.01em;
+  fill: rgb(255, 255, 255) !important;
+}
+
+@media (max-width: 992px) {
+  .container {
+      width: calc(100% - 70px);
+  }
+  .bd {
+      width: 176px;
+  }
+}
+
+@media (max-width: 768px) {
+  .financials {
+      display: block;
+  }
+  .three {
+      width: 372px;
+  }
+  .linetwo {
+      display: block;
+  }
+  .linetwo .fourtitle {
+      margin-top: 0;
+      margin-bottom: 12px;
+  }
+  .five,
+  .six {
+      width: 100%;
+      padding-top: 32px;
+  }
+}
+
+@media (max-width: 451px) {
+
+  .financials {
+      display: block;
+  }
+  .three {
+      width: 100%;
+  }
+  .highcharts-root {
+      width: 320px;
+  }
 }
